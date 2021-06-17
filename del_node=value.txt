@@ -1,0 +1,29 @@
+
+void deletenode(node*& head,int n)
+{
+	node* p, * k;
+	while (head && head->key == n)
+	{
+		p = head;              
+		head = head->next;
+		//deleteNode(p);
+	}
+
+	if (head != NULL)
+	{
+		p = head;
+		k = head->next;
+		while (k != NULL)
+		{
+			if (k->key != n)
+			{
+				p->next = k;
+				p = k;
+			}
+			k = k->next;
+		}
+
+		p->next = NULL;
+		//l.pTail = p;
+	}
+}
